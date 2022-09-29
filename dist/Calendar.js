@@ -13,7 +13,12 @@ const CalendarTemplate = ({
   fontSize = 12,
   primaryFontColor = "#222222",
   startTime = "8:00",
-  endTime = "20:00"
+  endTime = "20:00",
+  saveButtonText = 'Save Availability',
+  selectedMultipleButtonText = 'Add Selected Times to Multiple Days',
+  doneText = 'Done',
+  currentMonthText = 'Jump to Current Month',
+  locale = 'it'
 }) => {
   const theme = createMuiTheme({
     typography: {
@@ -63,62 +68,62 @@ const CalendarTemplate = ({
   const useMonths = year => ({
     1: {
       lastDay: 31,
-      month: "January",
+      month: locale === 'it' ? 'Gennaio' : "January",
       firstDay: moment(`01/01/${year}`).format(dateFormat)
     },
     2: {
       lastDay: year % 4 === 0 ? 29 : 28,
-      month: "February",
+      month: locale === 'it' ? 'febbraio' : "February",
       firstDay: moment(`01/02/${year}`).format(dateFormat)
     },
     3: {
       lastDay: 31,
-      month: "March",
+      month: locale === 'it' ? 'marzo' : "March",
       firstDay: moment(`01/03/${year}`).format(dateFormat)
     },
     4: {
       lastDay: 30,
-      month: "April",
+      month: locale === 'it' ? 'aprile' : "April",
       firstDay: moment(`01/04/${year}`).format(dateFormat)
     },
     5: {
       lastDay: 31,
-      month: "May",
+      month: locale === 'it' ? 'Maggio' : "May",
       firstDay: moment(`01/05/${year}`).format(dateFormat)
     },
     6: {
       lastDay: 30,
-      month: "June",
+      month: locale === 'it' ? 'Giugno' : "June",
       firstDay: moment(`01/06/${year}`).format(dateFormat)
     },
     7: {
       lastDay: 31,
-      month: "July",
+      month: locale === 'it' ? 'Luglio' : "July",
       firstDay: moment(`01/07/${year}`).format(dateFormat)
     },
     8: {
       lastDay: 31,
-      month: "August",
+      month: locale === 'it' ? 'agosto' : "August",
       firstDay: moment(`01/08/${year}`).format(dateFormat)
     },
     9: {
       lastDay: 30,
-      month: "September",
+      month: locale === 'it' ? 'settembre' : "September",
       firstDay: moment(`01/09/${year}`).format(dateFormat)
     },
     10: {
       lastDay: 31,
-      month: "October",
+      month: locale === 'it' ? 'ottobre' : "October",
       firstDay: moment(`01/10/${year}`).format(dateFormat)
     },
     11: {
       lastDay: 30,
-      month: "November",
+      month: locale === 'it' ? 'novembre' : "November",
       firstDay: moment(`01/11/${year}`).format(dateFormat)
     },
     12: {
       lastDay: 31,
-      month: "December",
+      month: locale === 'it' ? 'Dicembre' : "December",
       firstDay: moment(`01/12/${year}`).format(dateFormat)
     }
   });
@@ -502,7 +507,7 @@ const CalendarTemplate = ({
       disabled: year === Number(today.format("YYYY")) && month === today.format("MMMM"),
       onClick: handleJumpToCurrent,
       className: classes.buttonNoMargin
-    }, "Jump to Current Month")))), /*#__PURE__*/React.createElement(Grid, {
+    }, currentMonthText)))), /*#__PURE__*/React.createElement(Grid, {
       item: true
     }, /*#__PURE__*/React.createElement(IconButton, {
       onClick: createArrowHandler(1)
@@ -555,14 +560,14 @@ const CalendarTemplate = ({
       variant: "contained",
       onClick: handleSetMultiple,
       className: classes.button
-    }, settingMultiple ? "Done" : "Add Selected Times to Multiple Days")), /*#__PURE__*/React.createElement(Grid, {
+    }, settingMultiple ? doneText : selectedMultipleButtonText)), /*#__PURE__*/React.createElement(Grid, {
       item: true
     }, saving ? /*#__PURE__*/React.createElement(CircularProgress, null) : /*#__PURE__*/React.createElement(Button, {
       color: "primary",
       variant: "contained",
       onClick: handleSaveAvailability,
       className: classes.button
-    }, "Save Availability"))))));
+    }, saveButtonText))))));
 
     function addTimeToDay(newTimes) {
       const newAvail = availabilityState;
