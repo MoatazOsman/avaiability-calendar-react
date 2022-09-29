@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 
+const dateFormat = 'DD/MM/YYYY';
 const CalendarTemplate = ({
   availability,
   setAvailability,
@@ -74,62 +75,62 @@ const CalendarTemplate = ({
     1: {
       lastDay: 31,
       month: "January",
-      firstDay: moment(`01/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/01/${year}`).format(dateFormat),
     },
     2: {
       lastDay: year % 4 === 0 ? 29 : 28,
       month: "February",
-      firstDay: moment(`02/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/02/${year}`).format(dateFormat),
     },
     3: {
       lastDay: 31,
       month: "March",
-      firstDay: moment(`03/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/03/${year}`).format(dateFormat),
     },
     4: {
       lastDay: 30,
       month: "April",
-      firstDay: moment(`04/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/04/${year}`).format(dateFormat),
     },
     5: {
       lastDay: 31,
       month: "May",
-      firstDay: moment(`05/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/05/${year}`).format(dateFormat),
     },
     6: {
       lastDay: 30,
       month: "June",
-      firstDay: moment(`06/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/06/${year}`).format(dateFormat),
     },
     7: {
       lastDay: 31,
       month: "July",
-      firstDay: moment(`07/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/07/${year}`).format(dateFormat),
     },
     8: {
       lastDay: 31,
       month: "August",
-      firstDay: moment(`08/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/08/${year}`).format(dateFormat),
     },
     9: {
       lastDay: 30,
       month: "September",
-      firstDay: moment(`09/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/09/${year}`).format(dateFormat),
     },
     10: {
       lastDay: 31,
       month: "October",
-      firstDay: moment(`10/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/10/${year}`).format(dateFormat),
     },
     11: {
       lastDay: 30,
       month: "November",
-      firstDay: moment(`11/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/11/${year}`).format(dateFormat),
     },
     12: {
       lastDay: 31,
       month: "December",
-      firstDay: moment(`12/01/${year}`, "MM-DD-YYYY"),
+      firstDay: moment(`01/12/${year}`).format(dateFormat),
     },
   });
 

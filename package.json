@@ -16,6 +16,7 @@
     "url": "https://github.com/dproc96/avaiability-calendar-react/issues"
   },
   "author": "Dan Proctor",
+  "updatedBy": "Moataz Osman",
   "dependencies": {
     "@babel/cli": "^7.12.7",
     "@babel/core": "^7.12.7",
