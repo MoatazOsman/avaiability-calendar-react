@@ -78,62 +78,74 @@ const CalendarTemplate = ({
     const useMonths = (year) => ({
         1: {
             lastDay: 31,
-            month: locale === 'it' ? 'Gennaio' : "January",
+            displayMonth: locale === 'it' ? 'Gennaio' : "January",
+            month: 'January',
             firstDay: moment(`01/01/${year}`, dateFormat)
         },
         2: {
             lastDay: year % 4 === 0 ? 29 : 28,
-            month: locale === 'it' ? 'febbraio' : "February",
+            displayMonth: locale === 'it' ? 'febbraio' : "February",
+            month: 'February',
             firstDay: moment(`01/02/${year}`, dateFormat)
         },
         3: {
             lastDay: 31,
-            month: locale === 'it' ? 'marzo' : "March",
+            displayMonth: locale === 'it' ? 'marzo' : "March",
+            month: 'March',
             firstDay: moment(`01/03/${year}`, dateFormat)
         },
         4: {
             lastDay: 30,
-            month: locale === 'it' ? 'aprile' : "April",
+            displayMonth: locale === 'it' ? 'aprile' : "April",
+            month: 'April',
             firstDay: moment(`01/04/${year}`, dateFormat)
         },
         5: {
             lastDay: 31,
-            month: locale === 'it' ? 'Maggio' : "May",
+            displayMonth: locale === 'it' ? 'Maggio' : "May",
+            month: 'May',
             firstDay: moment(`01/05/${year}`, dateFormat)
         },
         6: {
             lastDay: 30,
-            month: locale === 'it' ? 'Giugno' : "June",
+            displayMonth: locale === 'it' ? 'Giugno' : "June",
+            month: 'June',
             firstDay: moment(`01/06/${year}`, dateFormat)
         },
         7: {
             lastDay: 31,
-            month: locale === 'it' ? 'Luglio' : "July",
+            displayMonth: locale === 'it' ? 'Luglio' : "July",
+            month: 'July',
             firstDay: moment(`01/07/${year}`, dateFormat)
         },
         8: {
             lastDay: 31,
-            month: locale === 'it' ? 'agosto' : "August",
+            displayMonth: locale === 'it' ? 'agosto' : "August",
+            month: 'August',
             firstDay: moment(`01/08/${year}`, dateFormat)
         },
         9: {
             lastDay: 30,
-            month: locale === 'it' ? 'settembre' : "September",
+            displayMonth: locale === 'it' ? 'settembre' : "September",
+            month: 'September',
             firstDay: moment(`01/09/${year}`, dateFormat)
         },
         10: {
             lastDay: 31,
-            month: locale === 'it' ? 'ottobre' : "October",
+            displayMonth: locale === 'it' ? 'ottobre' : "October",
+            month: 'October',
             firstDay: moment(`01/10/${year}`, dateFormat)
         },
         11: {
             lastDay: 30,
-            month: locale === 'it' ? 'novembre' : "November",
+            displayMonth: locale === 'it' ? 'novembre' : "November",
+            month: 'November',
             firstDay: moment(`01/11/${year}`, dateFormat)
         },
         12: {
             lastDay: 31,
-            month: locale === 'it' ? 'Dicembre' : "December",
+            displayMonth: locale === 'it' ? 'Dicembre' : "December",
+            month: 'displayMonth',
             firstDay: moment(`01/12/${year}`, dateFormat)
         },
     });
@@ -392,7 +404,7 @@ const CalendarTemplate = ({
         const [monthNumber, setMonthNumber] = useState(Number(today.format("M")));
         const [settingMultiple, setSettingMultiple] = useState(false);
         const months = useMonths(year);
-        const {firstDay, month, lastDay} = months[monthNumber];
+        const {firstDay, month, lastDay, displayMonth} = months[monthNumber];
         let dayOfWeek = Number(moment(firstDay).format("d"));
         const days = getDaysArray();
         const [times, setTimes] = useState(getDefaultTimes());
@@ -492,7 +504,7 @@ const CalendarTemplate = ({
                                 <Card style={{padding: 10, margin: 10}} variant="outlined">
                                     <Grid container direction="column" alignItems="center">
                                         <h3>
-                                            {month} {year}
+                                            {displayMonth} {year}
                                         </h3>
                                         {days.map((week, i) => (
                                             <Grid key={`day-${week}-${i}`} item>
