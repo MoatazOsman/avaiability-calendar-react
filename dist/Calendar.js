@@ -432,7 +432,9 @@ const CalendarTemplate = ({
     const handleOpenPopover = date => {
       return e => {
         if (quickAvailability[date]) {
-          setPopoverContent(quickAvailability[date].map(time => /*#__PURE__*/React.createElement("p", null, time)));
+          setPopoverContent(quickAvailability[date].map((time, index) => /*#__PURE__*/React.createElement("p", {
+            key: `time-${time}-${index}`
+          }, time)));
           setAnchorEl(e.target);
         }
       };
@@ -475,7 +477,7 @@ const CalendarTemplate = ({
       direction: "column",
       alignItems: "center"
     }, /*#__PURE__*/React.createElement("h3", null, month, " ", year), days.map((week, i) => /*#__PURE__*/React.createElement(Grid, {
-      key: i,
+      key: `day-${week}-${i}`,
       item: true
     }, /*#__PURE__*/React.createElement(Grid, {
       container: true,
@@ -526,7 +528,7 @@ const CalendarTemplate = ({
       alignItems: "center",
       wrap: "wrap"
     }, times.map((time, i) => i < times.length - 7 && /*#__PURE__*/React.createElement(TimeButton, {
-      key: time.time,
+      key: `${time.time}-${i}`,
       className: classes.button,
       start: time.time,
       end: times[i + 1].time,
@@ -540,7 +542,7 @@ const CalendarTemplate = ({
       alignItems: "center",
       wrap: "wrap"
     }, times.map((time, i) => i < times.length - 1 && i > 5 && /*#__PURE__*/React.createElement(TimeButton, {
-      key: time.time,
+      key: `${time.time}-${i}`,
       className: classes.button,
       start: time.time,
       end: times[i + 1].time,
