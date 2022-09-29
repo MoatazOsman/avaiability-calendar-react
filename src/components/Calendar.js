@@ -8,9 +8,8 @@ import {
     Button,
     CircularProgress,
     Popover,
-    ThemeProvider,
-    createMuiTheme,
 } from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import {ArrowLeft, ArrowRight} from "@material-ui/icons";
 
 const dateFormat = 'DD/MM/YYYY';
@@ -80,62 +79,62 @@ const CalendarTemplate = ({
         1: {
             lastDay: 31,
             month: locale === 'it' ? 'Gennaio' : "January",
-            firstDay: moment(`01/01/${year}`).format(dateFormat),
+            firstDay: moment(`01/01/${year}`, dateFormat)
         },
         2: {
             lastDay: year % 4 === 0 ? 29 : 28,
             month: locale === 'it' ? 'febbraio' : "February",
-            firstDay: moment(`01/02/${year}`).format(dateFormat),
+            firstDay: moment(`01/02/${year}`, dateFormat)
         },
         3: {
             lastDay: 31,
             month: locale === 'it' ? 'marzo' : "March",
-            firstDay: moment(`01/03/${year}`).format(dateFormat),
+            firstDay: moment(`01/03/${year}`, dateFormat)
         },
         4: {
             lastDay: 30,
             month: locale === 'it' ? 'aprile' : "April",
-            firstDay: moment(`01/04/${year}`).format(dateFormat),
+            firstDay: moment(`01/04/${year}`, dateFormat)
         },
         5: {
             lastDay: 31,
             month: locale === 'it' ? 'Maggio' : "May",
-            firstDay: moment(`01/05/${year}`).format(dateFormat),
+            firstDay: moment(`01/05/${year}`, dateFormat)
         },
         6: {
             lastDay: 30,
             month: locale === 'it' ? 'Giugno' : "June",
-            firstDay: moment(`01/06/${year}`).format(dateFormat),
+            firstDay: moment(`01/06/${year}`, dateFormat)
         },
         7: {
             lastDay: 31,
             month: locale === 'it' ? 'Luglio' : "July",
-            firstDay: moment(`01/07/${year}`).format(dateFormat),
+            firstDay: moment(`01/07/${year}`, dateFormat)
         },
         8: {
             lastDay: 31,
             month: locale === 'it' ? 'agosto' : "August",
-            firstDay: moment(`01/08/${year}`).format(dateFormat),
+            firstDay: moment(`01/08/${year}`, dateFormat)
         },
         9: {
             lastDay: 30,
             month: locale === 'it' ? 'settembre' : "September",
-            firstDay: moment(`01/09/${year}`).format(dateFormat),
+            firstDay: moment(`01/09/${year}`, dateFormat)
         },
         10: {
             lastDay: 31,
             month: locale === 'it' ? 'ottobre' : "October",
-            firstDay: moment(`01/10/${year}`).format(dateFormat),
+            firstDay: moment(`01/10/${year}`, dateFormat)
         },
         11: {
             lastDay: 30,
             month: locale === 'it' ? 'novembre' : "November",
-            firstDay: moment(`01/11/${year}`).format(dateFormat),
+            firstDay: moment(`01/11/${year}`, dateFormat)
         },
         12: {
             lastDay: 31,
             month: locale === 'it' ? 'Dicembre' : "December",
-            firstDay: moment(`01/12/${year}`).format(dateFormat),
+            firstDay: moment(`01/12/${year}`, dateFormat)
         },
     });
 
@@ -477,7 +476,7 @@ const CalendarTemplate = ({
                     alignItems="center"
                 >
                     <Grid item>
-                        <Grid container direction="row" alignItems="center" justify="center">
+                        <Grid container direction="row" alignItems="center" justifyContent="center">
                             <Grid item>
                                 <IconButton
                                     disabled={
@@ -564,7 +563,7 @@ const CalendarTemplate = ({
                                 </IconButton>
                             </Grid>
                             <Grid item>
-                                <Grid container justify="center" alignItems="center" wrap="wrap">
+                                <Grid container justifyContent="center" alignItems="center" wrap="wrap">
                                     <Grid item>
                                         <Grid
                                             container
@@ -615,7 +614,7 @@ const CalendarTemplate = ({
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Grid container direction="row" alignItems="center" justify="center">
+                        <Grid container direction="row" alignItems="center" justifyContent="center">
                             <Grid item>
                                 <Button
                                     color="primary"
