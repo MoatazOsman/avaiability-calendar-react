@@ -458,7 +458,7 @@ const CalendarTemplate = ({
             return (e) => {
                 if (quickAvailability[date]) {
                     setPopoverContent(
-                        quickAvailability[date].map((time) => <p>{time}</p>)
+                        quickAvailability[date].map((time, index) => <p key={`time-${time}-${index}`}>{time}</p>)
                     );
                     setAnchorEl(e.target);
                 }
@@ -496,7 +496,7 @@ const CalendarTemplate = ({
                                             {month} {year}
                                         </h3>
                                         {days.map((week, i) => (
-                                            <Grid key={i} item>
+                                            <Grid key={`day-${week}-${i}`} item>
                                                 <Grid container direction="row">
                                                     {week.map((day, i) => (
                                                         <Grid key={year + month + i} item>
@@ -576,7 +576,7 @@ const CalendarTemplate = ({
                                                 (time, i) =>
                                                     i < times.length - 7 && (
                                                         <TimeButton
-                                                            key={time.time}
+                                                            key={`${time.time}-${i}`}
                                                             className={classes.button}
                                                             start={time.time}
                                                             end={times[i + 1].time}
@@ -599,7 +599,7 @@ const CalendarTemplate = ({
                                                     i < times.length - 1 &&
                                                     i > 5 && (
                                                         <TimeButton
-                                                            key={time.time}
+                                                            key={`${time.time}-${i}`}
                                                             className={classes.button}
                                                             start={time.time}
                                                             end={times[i + 1].time}
