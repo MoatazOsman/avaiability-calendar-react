@@ -75,19 +75,19 @@ const CalendarTemplate = ({
     },
     2: {
       lastDay: year % 4 === 0 ? 29 : 28,
-      displayMonth: locale === 'it' ? 'febbraio' : "February",
+      displayMonth: locale === 'it' ? 'Febbraio' : "February",
       month: 'February',
       firstDay: moment(`01/02/${year}`, dateFormat)
     },
     3: {
       lastDay: 31,
-      displayMonth: locale === 'it' ? 'marzo' : "March",
+      displayMonth: locale === 'it' ? 'Marzo' : "March",
       month: 'March',
       firstDay: moment(`01/03/${year}`, dateFormat)
     },
     4: {
       lastDay: 30,
-      displayMonth: locale === 'it' ? 'aprile' : "April",
+      displayMonth: locale === 'it' ? 'Aprile' : "April",
       month: 'April',
       firstDay: moment(`01/04/${year}`, dateFormat)
     },
@@ -111,25 +111,25 @@ const CalendarTemplate = ({
     },
     8: {
       lastDay: 31,
-      displayMonth: locale === 'it' ? 'agosto' : "August",
+      displayMonth: locale === 'it' ? 'Agosto' : "August",
       month: 'August',
       firstDay: moment(`01/08/${year}`, dateFormat)
     },
     9: {
       lastDay: 30,
-      displayMonth: locale === 'it' ? 'settembre' : "September",
+      displayMonth: locale === 'it' ? 'Settembre' : "September",
       month: 'September',
       firstDay: moment(`01/09/${year}`, dateFormat)
     },
     10: {
       lastDay: 31,
-      displayMonth: locale === 'it' ? 'ottobre' : "October",
+      displayMonth: locale === 'it' ? 'Ottobre' : "October",
       month: 'October',
       firstDay: moment(`01/10/${year}`, dateFormat)
     },
     11: {
       lastDay: 30,
-      displayMonth: locale === 'it' ? 'novembre' : "November",
+      displayMonth: locale === 'it' ? 'Novembre' : "November",
       month: 'November',
       firstDay: moment(`01/11/${year}`, dateFormat)
     },
