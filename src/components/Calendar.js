@@ -271,7 +271,7 @@ const CalendarTemplate = ({
             <Button
                 onClick={handleClick}
                 color={available ? "primary" : "default"}
-                className={className}
+                className={`${className}`}
                 variant={available ? "contained" : "outlined"}
             >
                 {start} - {end}
@@ -579,6 +579,7 @@ const CalendarTemplate = ({
                                     <Grid item>
                                         <Grid
                                             container
+                                            className={'time-buttons-container'}
                                             direction="column"
                                             alignItems="center"
                                             wrap="wrap"
@@ -632,7 +633,7 @@ const CalendarTemplate = ({
                                     color="primary"
                                     variant="contained"
                                     onClick={handleSetMultiple}
-                                    className={classes.button}
+                                    className={`${classes.button} select-multi-btn`}
                                 >
                                     {settingMultiple
                                         ? doneText
@@ -647,7 +648,7 @@ const CalendarTemplate = ({
                                         color="primary"
                                         variant="contained"
                                         onClick={handleSaveAvailability}
-                                        className={classes.button}
+                                        className={`${classes.button} save-btn`}
                                     >
                                         {saveButtonText}
                                     </Button>

@@ -243,7 +243,7 @@ const CalendarTemplate = ({
     return /*#__PURE__*/React.createElement(Button, {
       onClick: handleClick,
       color: available ? "primary" : "default",
-      className: className,
+      className: `${className}`,
       variant: available ? "contained" : "outlined"
     }, start, " - ", end);
   }
@@ -538,6 +538,7 @@ const CalendarTemplate = ({
       item: true
     }, /*#__PURE__*/React.createElement(Grid, {
       container: true,
+      className: 'time-buttons-container',
       direction: "column",
       alignItems: "center",
       wrap: "wrap"
@@ -575,14 +576,14 @@ const CalendarTemplate = ({
       color: "primary",
       variant: "contained",
       onClick: handleSetMultiple,
-      className: classes.button
+      className: `${classes.button} select-multi-btn`
     }, settingMultiple ? doneText : selectedMultipleButtonText)), /*#__PURE__*/React.createElement(Grid, {
       item: true
     }, saving ? /*#__PURE__*/React.createElement(CircularProgress, null) : /*#__PURE__*/React.createElement(Button, {
       color: "primary",
       variant: "contained",
       onClick: handleSaveAvailability,
-      className: classes.button
+      className: `${classes.button} save-btn`
     }, saveButtonText))))));
 
     function addTimeToDay(newTimes) {
